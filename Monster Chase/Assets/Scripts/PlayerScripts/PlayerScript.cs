@@ -50,6 +50,7 @@ public class PlayerScript : MonoBehaviour
         if (Keyboard.current.spaceKey.wasPressedThisFrame && isGrounded == true)
         {
             rigidbody2D.linearVelocity = new Vector2(rigidbody2D.linearVelocity.x, jumpForce);
+            animator.SetBool("Jump", true);
             isGrounded = false;
         }
     }
@@ -58,6 +59,7 @@ public class PlayerScript : MonoBehaviour
     {
         if (collision.collider.CompareTag("Ground"))
         {
+            animator.SetBool("Jump", false);
             isGrounded = true;
         }
     }
