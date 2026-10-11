@@ -1,3 +1,5 @@
+using NUnit.Framework.Constraints;
+using Unity.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -6,12 +8,14 @@ public class PlayerScript : MonoBehaviour
     public float moveSpeed;
     public Animator animator;
     public float jumpForce;
+    public bool isGrounded;
     public Rigidbody2D rigidbody2D;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         moveSpeed = 6;
         jumpForce = 6;
+        isGrounded = true;
         animator = GetComponent<Animator>();
         rigidbody2D = GetComponent<Rigidbody2D>();
     }
@@ -20,6 +24,7 @@ public class PlayerScript : MonoBehaviour
     void Update()
     {
         MovePlayer();
+        JumpPlayer();
     }
 
     void MovePlayer()
@@ -40,11 +45,20 @@ public class PlayerScript : MonoBehaviour
         }
     }
 
-    void JumpPlater()
+    void JumpPlayer()
     {
-        if (Keyboard.current.spaceKey.isPressed)
+        if (Keyboard.current.spaceKey.wasPressedThisFrame && isGrounded == true)
         {
             rigidbody2D.linearVelocity = new Vector2(rigidbody2D.linearVelocity.x, jumpForce);
+            isGrounded = false;
+        }
+    }
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.collider.CompareTag("Ground"))
+        {
+            isGrounded = true;
         }
     }
 }
