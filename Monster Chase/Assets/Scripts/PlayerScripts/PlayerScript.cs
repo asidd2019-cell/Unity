@@ -10,6 +10,7 @@ public class PlayerScript : MonoBehaviour
     public float jumpForce;
     public bool isGrounded;
     public Rigidbody2D rigidbody2D;
+    public SpriteRenderer spriteRenderer;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -18,6 +19,7 @@ public class PlayerScript : MonoBehaviour
         isGrounded = true;
         animator = GetComponent<Animator>();
         rigidbody2D = GetComponent<Rigidbody2D>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
@@ -33,11 +35,13 @@ public class PlayerScript : MonoBehaviour
         {
             this.transform.Translate(-moveSpeed * Time.deltaTime,0,0);
             animator.SetBool("Walk", true);
+            spriteRenderer.flipX = true;
         }
         else if (Keyboard.current.rightArrowKey.isPressed)
         {
             this.transform.Translate(moveSpeed * Time.deltaTime,0,0);
             animator.SetBool("Walk", true);
+            spriteRenderer.flipX = false;
         }
         else
         {
