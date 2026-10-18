@@ -1,0 +1,23 @@
+using UnityEngine;
+
+public class EnemyScript : MonoBehaviour
+
+{
+    public float moveSpeed;
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    void Start()
+    {
+        moveSpeed = 6;
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        MoveEnemy();
+    }
+
+    void MoveEnemy()
+    {
+        this.transform.Translate(-moveSpeed * Time.deltaTime,0,0);
+    }
+}
