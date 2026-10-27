@@ -1554,8 +1554,8 @@ MonoBehaviour:
   positions:
   - Left
   - Right
-  leftPos: {x: 0, y: 0, z: 0}
-  rightPos: {x: 0, y: 0, z: 0}
+  leftPos: {x: -80.9, y: -2.89, z: 0}
+  rightPos: {x: 53.31, y: -2.89, z: 0}
   enemies:
   - {fileID: 1505166273832896766, guid: 6dce370931597a1419db6b8f3f073d43, type: 3}
   - {fileID: 3836082806492392192, guid: f546d9f3b514e424798d0d36fc19a4ae, type: 3}
