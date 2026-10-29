@@ -8572,7 +8572,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerScript
   moveSpeed: 0
   animator: {fileID: 0}
-  jumpForce: 0
+  jumpForce: 8
   isGrounded: 0
   rigidbody2D: {fileID: 0}
   spriteRenderer: {fileID: 0}

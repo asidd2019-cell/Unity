@@ -15,7 +15,6 @@ public class PlayerScript : MonoBehaviour
     void Start()
     {
         moveSpeed = 6;
-        jumpForce = 6;
         isGrounded = true;
         animator = GetComponent<Animator>();
         rigidbody2D = GetComponent<Rigidbody2D>();

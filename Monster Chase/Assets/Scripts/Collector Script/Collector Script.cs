@@ -13,4 +13,12 @@ public class CollectorScript : MonoBehaviour
     {
         
     }
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.collider.CompareTag("Enemy"))
+        {
+            Debug.Log("testing");
+        }
+    }
 }
