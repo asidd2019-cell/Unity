@@ -24,7 +24,7 @@ public class EnemySpawner : MonoBehaviour
         {
             while (true)
             {
-                yield return new WaitForSeconds(Random.Range(1,3));
+                yield return new WaitForSeconds(Random.Range(1,1));
                 string position = positions[Random.Range(0,2)];
                 var enemy = enemies[Random.Range(0,3)];
                 var spawnedEnemy = Instantiate(enemy);

@@ -500,6 +500,7 @@ GameObject:
   - component: {fileID: 84324786}
   - component: {fileID: 84324788}
   - component: {fileID: 84324787}
+  - component: {fileID: 84324789}
   m_Layer: 0
   m_Name: Left Barrier
   m_TagString: Untagged
@@ -628,6 +629,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
   m_BlendShapeWeights: []
+--- !u!114 &84324789
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 84324785}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46aeea7841cffa444aa85a0394e25e87, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CollectorScript
 --- !u!1 &92344559
 GameObject:
   m_ObjectHideFlags: 0
@@ -778,6 +791,7 @@ GameObject:
   - component: {fileID: 98763758}
   - component: {fileID: 98763759}
   - component: {fileID: 98763760}
+  - component: {fileID: 98763761}
   m_Layer: 0
   m_Name: Right Barrier
   m_TagString: Untagged
@@ -906,6 +920,18 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &98763761
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 98763757}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46aeea7841cffa444aa85a0394e25e87, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CollectorScript
 --- !u!1 &115987970
 GameObject:
   m_ObjectHideFlags: 0
