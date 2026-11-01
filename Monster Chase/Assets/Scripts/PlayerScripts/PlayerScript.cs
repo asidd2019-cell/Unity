@@ -2,6 +2,7 @@ using NUnit.Framework.Constraints;
 using Unity.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using TMPro;
 
 public class PlayerScript : MonoBehaviour
 {
@@ -11,6 +12,8 @@ public class PlayerScript : MonoBehaviour
     public bool isGrounded;
     public Rigidbody2D rigidbody2D;
     public SpriteRenderer spriteRenderer;
+    public int lives;
+    public TMP_Text lives_tmp;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -19,6 +22,7 @@ public class PlayerScript : MonoBehaviour
         animator = GetComponent<Animator>();
         rigidbody2D = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        lives_tmp.SetText("Lives: {0}", lives);
     }
 
     // Update is called once per frame
@@ -64,6 +68,15 @@ public class PlayerScript : MonoBehaviour
         {
             animator.SetBool("Jump", false);
             isGrounded = true;
+        }
+    }
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Enemy"))
+        {
+            lives = lives - 1;
+            Destroy(other.gameObject);
+            lives_tmp.SetText("Lives: {0}", lives);
         }
     }
 }

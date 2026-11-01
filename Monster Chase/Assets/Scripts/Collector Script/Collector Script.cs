@@ -14,11 +14,11 @@ public class CollectorScript : MonoBehaviour
         
     }
 
-    void OnCollisionEnter2D(Collision2D collision)
+    void OnTriggerEnter2D(Collider2D other)
     {
-        if (collision.collider.CompareTag("Enemy"))
+        if (other.CompareTag("Enemy"))
         {
-            Debug.Log("testing");
+            Destroy(other.gameObject);
         }
     }
 }
