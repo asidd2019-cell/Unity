@@ -32,13 +32,13 @@ public class EnemySpawner : MonoBehaviour
                 if (position == "Left")
                 {
                     spawnedEnemy.transform.position = leftPos;
-                    spawnedEnemy.GetComponent<EnemyScript>().moveSpeed = Random.Range(3,10) * -1;
+                    spawnedEnemy.GetComponent<EnemyScript>().moveSpeed = Random.Range(3,6) * -1;
                     spawnedEnemy.GetComponent<SpriteRenderer>().flipX = false;
                 }
                 else if (position == "Right")
                 {
                     spawnedEnemy.transform.position = rightPos;
-                    spawnedEnemy.GetComponent<EnemyScript>().moveSpeed = Random.Range(3,10);
+                    spawnedEnemy.GetComponent<EnemyScript>().moveSpeed = Random.Range(3,6);
                     spawnedEnemy.GetComponent<SpriteRenderer>().flipX = true;
                 }
             }

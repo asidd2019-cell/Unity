@@ -3,6 +3,7 @@ using Unity.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class PlayerScript : MonoBehaviour
 {
@@ -30,6 +31,10 @@ public class PlayerScript : MonoBehaviour
     {
         MovePlayer();
         JumpPlayer();
+        if (lives == 0)
+        {
+            SceneManager.LoadScene("GameOver");
+        }
     }
 
     void MovePlayer()
