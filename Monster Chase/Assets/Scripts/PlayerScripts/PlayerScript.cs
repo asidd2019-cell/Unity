@@ -39,13 +39,13 @@ public class PlayerScript : MonoBehaviour
 
     void MovePlayer()
     {
-        if (Keyboard.current.leftArrowKey.isPressed)
+        if (Keyboard.current.aKey.isPressed)
         {
             this.transform.Translate(-moveSpeed * Time.deltaTime,0,0);
             animator.SetBool("Walk", true);
             spriteRenderer.flipX = true;
         }
-        else if (Keyboard.current.rightArrowKey.isPressed)
+        else if (Keyboard.current.dKey.isPressed)
         {
             this.transform.Translate(moveSpeed * Time.deltaTime,0,0);
             animator.SetBool("Walk", true);
