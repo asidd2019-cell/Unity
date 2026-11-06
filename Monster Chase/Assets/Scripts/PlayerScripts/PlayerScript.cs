@@ -15,6 +15,7 @@ public class PlayerScript : MonoBehaviour
     public SpriteRenderer spriteRenderer;
     public int lives;
     public TMP_Text lives_tmp;
+    public GameObject bulletObject;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -31,6 +32,7 @@ public class PlayerScript : MonoBehaviour
     {
         MovePlayer();
         JumpPlayer();
+        shootBullet();
         if (lives == 0)
         {
             SceneManager.LoadScene("GameOver");
@@ -82,6 +84,25 @@ public class PlayerScript : MonoBehaviour
             lives = lives - 1;
             Destroy(other.gameObject);
             lives_tmp.SetText("Lives: {0}", lives);
+        }
+    }
+
+    void shootBullet()
+    {
+        if (Mouse.current.leftButton.wasPressedThisFrame)
+        {
+            if (spriteRenderer.flipX == true)
+            {
+                var bullet = Instantiate(bulletObject);
+                bullet.transform.position = new Vector3(this.GetComponent<BoxCollider2D>().bounds.center.x + this.GetComponent<BoxCollider2D>().bounds.extents.x-1.5f,this.GetComponent<BoxCollider2D>().bounds.center.y,1);
+                bullet.GetComponent<BulletScript>().movespeed = -8;
+            }
+            else
+            {
+                var bullet = Instantiate(bulletObject);
+                bullet.transform.position = new Vector3(this.GetComponent<BoxCollider2D>().bounds.center.x + this.GetComponent<BoxCollider2D>().bounds.extents.x+0.5f,this.GetComponent<BoxCollider2D>().bounds.center.y,1);
+                bullet.GetComponent<BulletScript>().movespeed = 8;
+            }
         }
     }
 }
