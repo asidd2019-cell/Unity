@@ -77,6 +77,7 @@ public class PlayerScript : MonoBehaviour
             isGrounded = true;
         }
     }
+    
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Enemy"))
