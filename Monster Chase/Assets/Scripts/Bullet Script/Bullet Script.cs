@@ -1,9 +1,11 @@
 using UnityEngine;
+using System;
 
 public class BulletScript : MonoBehaviour
 {
 
     public float movespeed;
+    public event Action BulletHit;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -26,6 +28,7 @@ public class BulletScript : MonoBehaviour
         {
             Destroy(other.gameObject);
             Destroy(this.gameObject);
+            BulletHit?.Invoke();
         }
     }
 }
