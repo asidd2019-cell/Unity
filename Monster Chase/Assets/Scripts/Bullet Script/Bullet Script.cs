@@ -6,6 +6,7 @@ public class BulletScript : MonoBehaviour
 
     public float movespeed;
     public event Action BulletHit;
+    public event Action EnemyHit;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -27,6 +28,21 @@ public class BulletScript : MonoBehaviour
         if (other.CompareTag("Enemy"))
         {
             Destroy(other.gameObject);
+            Destroy(this.gameObject);
+            BulletHit?.Invoke();
+            EnemyHit?.Invoke();
+        }
+        if (other.CompareTag("Barrier"))
+        {
+            Destroy(this.gameObject);
+            BulletHit?.Invoke();
+        }
+    }
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.collider.CompareTag("Barrier"))
+        {
             Destroy(this.gameObject);
             BulletHit?.Invoke();
         }
