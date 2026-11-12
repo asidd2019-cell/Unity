@@ -32,11 +32,6 @@ public class BulletScript : MonoBehaviour
             BulletHit?.Invoke();
             EnemyHit?.Invoke();
         }
-        if (other.CompareTag("Barrier"))
-        {
-            Destroy(this.gameObject);
-            BulletHit?.Invoke();
-        }
     }
 
     void OnCollisionEnter2D(Collision2D collision)
