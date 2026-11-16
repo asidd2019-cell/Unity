@@ -28,6 +28,7 @@ public class PlayerScript : MonoBehaviour
         rigidbody2D = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         lives_tmp.SetText("Lives: {0}", lives);
+        ScoreStatic.Score = scores;
         scores_tmp.SetText("Score: {0}", scores);
         isBulletOnScreen = false;
     }
@@ -125,6 +126,7 @@ public class PlayerScript : MonoBehaviour
     void IncreaseScore()
     {
         scores=scores+1;
+        ScoreStatic.Score = scores;
         scores_tmp.SetText("Score: {0}", scores);
     }
 }
