@@ -131,6 +131,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyScript
   moveSpeed: 0
+  bulletObject: {fileID: 8491336188182391150, guid: ead414b15e43c8642bab03f7cd22f7ab, type: 3}
+  spriteRenderer: {fileID: 0}
 --- !u!61 &-508778175769234516
 BoxCollider2D:
   m_ObjectHideFlags: 0

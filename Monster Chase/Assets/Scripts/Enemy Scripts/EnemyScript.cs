@@ -34,13 +34,13 @@ public class EnemyScript : MonoBehaviour
                     {
                         var bullet = Instantiate(bulletObject);
                         bullet.transform.position = new Vector3(this.GetComponent<BoxCollider2D>().bounds.center.x + this.GetComponent<BoxCollider2D>().bounds.extents.x-1.5f,this.GetComponent<BoxCollider2D>().bounds.center.y,1);
-                        bullet.GetComponent<BulletScript>().movespeed = -8;
+                        bullet.GetComponent<EnemyEnergyBallScript>().movespeed = -8;
                     }
                     else
                     {
                         var bullet = Instantiate(bulletObject);
                         bullet.transform.position = new Vector3(this.GetComponent<BoxCollider2D>().bounds.center.x + this.GetComponent<BoxCollider2D>().bounds.extents.x+0.5f,this.GetComponent<BoxCollider2D>().bounds.center.y,1);
-                        bullet.GetComponent<BulletScript>().movespeed = 8;
+                        bullet.GetComponent<EnemyEnergyBallScript>().movespeed = 8;
                     }
             }
 }
