@@ -7,6 +7,7 @@ public class BulletScript : MonoBehaviour
     public float movespeed;
     public event Action BulletHit;
     public event Action EnemyHit;
+    
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {

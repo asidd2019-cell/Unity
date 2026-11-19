@@ -32,4 +32,12 @@ public class EnemyEnergyBallScript : MonoBehaviour
     {
         this.transform.Translate(movespeed * Time.deltaTime,0,0);
     }
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.collider.CompareTag("Barrier"))
+        {
+            Destroy(this.gameObject);
+        }
+    }
 }
