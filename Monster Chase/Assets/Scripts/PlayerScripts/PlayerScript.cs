@@ -82,6 +82,13 @@ public class PlayerScript : MonoBehaviour
             animator.SetBool("Jump", false);
             isGrounded = true;
         }
+
+        if (collision.collider.CompareTag("EnemyBullet"))
+        {
+            lives--;
+            Destroy(collision.gameObject);
+            lives_tmp.SetText("Lives: {0}", lives);
+        }
     }
     
     void OnTriggerEnter2D(Collider2D other)

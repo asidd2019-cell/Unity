@@ -14,7 +14,7 @@ public class EnemyScript : MonoBehaviour
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
         StartCoroutine (shootBullet());
-        maxBullets = 2;
+        maxBullets = 1;
         bulletsGenerated = 0;
     }
 
