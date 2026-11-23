@@ -9,6 +9,7 @@ TagManager:
   - Bullet
   - Barrier
   - EnemyBullet
+  - Invincibility
   layers:
   - Default
   - TransparentFX
